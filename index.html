@@ -6,7 +6,7 @@
     <title>Hazelgranger by hazelGranger</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="javascripts/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     <script src="http://www.appadhoc.com/downloads/web/adhoc.min.js"></script>
     <!--[if lt IE 9]>
@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
   </head>
-  <body onload="adhoc.init('ADHOC_ec3099cf-f843-44ad-85fe-07d3bb0fac9f')">
+  <body>
 
       <header>
         <h1 id="t1">Hazelgranger <button>test</button></h1>
@@ -31,21 +31,22 @@
                 $('#t1').hide();
               }
             }
-            adhoc.getExperimentFlags(applyFlags);
 
-            // $(document).ready(function(){
+            $(document).ready(function(){
 
-             
+              adhoc.init('ADHOC_ec3099cf-f843-44ad-85fe-07d3bb0fac9f');
 
-            //   $('#t1 button').click(function(e){
-            //     e.preventDefault();
-            //     adhoc.incrementStat('clicks', 1)
-            //   });
-            //   $('#t2 button').click(function(e){
-            //     e.preventDefault();
-            //     adhoc.incrementStat('clicks', 1)
-            //   });
-            // });
+              adhoc.getExperimentFlags(applyFlags);
+
+              $('#t1 button').click(function(e){
+                e.preventDefault();
+                adhoc.incrementStat('clicks_a', 1)
+              });
+              $('#t2 button').click(function(e){
+                e.preventDefault();
+                adhoc.incrementStat('clicks_b', 1)
+              });
+            });
         </script>
         <p>Hazel&#39;s github blog</p>
       </header>
