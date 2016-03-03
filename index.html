@@ -18,7 +18,23 @@
   <body onload="adhoc.init('ADHOC_ec3099cf-f843-44ad-85fe-07d3bb0fac9f')">
 
       <header>
-        <h1>Hazelgranger</h1>
+        <h1 id="t1">Hazelgranger <button>test</button></h1>
+        <h1 id="t2">wangzhen <button>test</button></h1>
+        <script >
+         function applyFlags(flags) { 
+              var text = JSON.stringify(flags);
+              if (flags.hasOwnProperty('testFlag') && flags.testFlag) {
+                $('#t1').show();
+                $('#t2').hide();
+              } else {
+                $('#t2').show();
+                $('#t1').hide();
+              }
+            }
+            adhoc.getExperimentFlags(applyFlags);
+
+            
+        </script>
         <p>Hazel&#39;s github blog</p>
       </header>
 
